@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-4">
+        <h1 class="display-4">Users Name</h1>
+        <input type="text" [(ngModel)]="name" (input)="getUser(nameR.value)" #nameR="ngModel" name="nameN" class="form-control" id="userName" placeholder="Enter user name">
+
+        <div class="list-group" id="list-tab" role="tablist">
+            <a *ngFor="let user of users ; let i = index" class="list-group-item list-group-item-action" id="{{i}}" (click)="getPostsByuserId(user.id)" data-toggle="list" href="#{{i}}" role="tab">{{user.name}}</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <h1 class="display-4">Posts Name</h1>
+        <input type="text" (input)="getPost(postR.value)" #postR name="postN" class="form-control" id="post" placeholder="Enter post name">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let post of postsById ; let i = index" class="list-group-item">{{post.title}}</li>
+        </ul>
+    </div>
+</div>

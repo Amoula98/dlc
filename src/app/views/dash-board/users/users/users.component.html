@@ -1,0 +1,19 @@
+<div class="card-deck mb-3 text-center">
+    <div class="col-md-4" *ngFor="let user of users; let i = index">
+        <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <h4 class="card-title">{{user.name}}</h4>
+                <p class="card-text">{{user.email}}</p>
+                <div type="button" class="btn btn-info" data-toggle="collapse" attr.data-target="#{{user.username}}">Simple collapsible</div>
+                <div id="{{user.username}}" class="collapse">
+                    <h4 class="card-title">{{user.username}}</h4>
+                    <h4 class="card-title">{{user.address.street}} ,{{user.address.suite}},{{user.address.city}},{{user.address.zipcode}}, {{user.address.geo.lat}}: {{user.address.geo.lng}} </h4>
+                    <h4 class="card-title">{{user.phone}}</h4>
+                    <h4 class="card-title">{{user.website}}</h4>
+                    <h4 class="card-title">company info </h4>
+                    <h4 class="card-title"> name{{user.company.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
